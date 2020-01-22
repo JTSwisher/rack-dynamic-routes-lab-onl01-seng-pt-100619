@@ -7,7 +7,7 @@ class Application
     req = Rack::Request.new 
     
     if req.path.match(/items/)
-      item_requested = req.params["item"]
+      item_requested = req.path.split("/items/").last
       
       if @@items.include?(item_requested)
         @@items.map do |item_requested|
