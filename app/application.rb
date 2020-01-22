@@ -12,6 +12,7 @@ class Application
       if @@items.include?(item_requested)
         @@items.map do |item_requested|
           resp.write item_requested.price
+        end 
       else 
         resp.write "Item not found"
         resp.status = 400
